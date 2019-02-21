@@ -1,0 +1,62 @@
+
+# -------------------------------------------------------------------------------
+# Filename:    gfsh-constants
+# Version:     2.0
+# Date:        2018-11-20
+# Author:      LiuBaoWen
+# Email:       bwliush@cn.ibm.com
+# Description: 所有查询使用变量
+# Notes:       
+# -------------------------------------------------------------------------------
+
+#start locator&server
+start_locator="start locator --name=$cfm_locator_name --port=10334 --dir=/opt/app/gemfire --mcast-port=0 --locators='${host_master}[10334],${host_slave}[10334]'"
+start_server="start server --name=$cfm_server_name --server-port=40405 --J=-XX:CMSInitiatingOccupancyFraction=80 --eviction-heap-percentage=75 --critical-heap-percentage=90 --max-threads=20000 --max-connections=10000 --disable-exit-when-out-of-memory=true --initial-heap=1024m --max-heap=3072m --dir=/opt/app/gemfire --mcast-port=0 --locators='${host_master}[10334],$host_slave[10334]'"
+
+#start locator single
+start_locator_single="start locator --name=${cfm_locator_name} --port=10334 --dir=/opt/app/gemfire --mcast-port=0 --locators='${host_master}[10334],${host_slave}[10334]' --enable-cluster-configuration=no"
+
+#stop locator&server
+stop_server="stop server --name=${cfm_server_name}"
+stop_locator="stop locator --name=${cfm_locator_name}"
+
+#deploy jar
+deploy_jar='deploy --jar /usr/local/cfmsoftware/CFMdomain.jar'
+
+#shutdown locators&servers
+shutdown_include_locators='shutdown --include-locators=true'
+
+#创建region
+create_region_MemberCardStatus='create region --name=MemberCardStatus --type=REPLICATE_PERSISTENT_OVERFLOW'
+create_region_MemberMemStatus='create region --name=MemberMemStatus --type=REPLICATE_PERSISTENT_OVERFLOW'
+create_region_ProductsNRate='create region --name=ProductsNRate --type=REPLICATE_PERSISTENT_OVERFLOW'
+create_region_MemberStatusComposite='create region --name=MemberStatusComposite --type=REPLICATE_PERSISTENT_OVERFLOW'
+create_region_MemberMgtLevel='create region --name=MemberMgtLevel --type=REPLICATE_PERSISTENT_OVERFLOW'
+create_region_CheckDistributed='create region --name=CheckDistributed --type=REPLICATE_PERSISTENT_OVERFLOW'
+create_region_OrgStores='create region --name=OrgStores --type=REPLICATE_PERSISTENT_OVERFLOW'
+create_region_CampResultGoods='create region --name=CampResultGoods --type=REPLICATE_PERSISTENT_OVERFLOW'
+create_region_CampResultHead='create region --name=CampResultHead --type=REPLICATE_PERSISTENT_OVERFLOW'
+create_region_CampResultLadder='create region --name=CampResultLadder --type=REPLICATE_PERSISTENT_OVERFLOW'
+create_region_CampResultMemGroup='create region --name=CampResultMemGroup --type=REPLICATE_PERSISTENT_OVERFLOW'
+create_region_CampResultMemLabel='create region --name=CampResultMemLabel --type=REPLICATE_PERSISTENT_OVERFLOW'
+create_region_CampResultShop='create region --name=CampResultShop --type=REPLICATE_PERSISTENT_OVERFLOW'
+create_region_PosOrderOffline='create region --name=PosOrderOffline --type=REPLICATE_PERSISTENT_OVERFLOW'
+create_region_MemberTicketData='create region --name=MemberTicketData --type=REPLICATE_PERSISTENT_OVERFLOW'
+
+create_index_productNGoodsIndex='create index --name=productNGoodsIndex --expression=goodsCode --region=/ProductsNRate'
+create_index_productNClassIndex='create index --name=productNClassIndex --expression=classId --region=/ProductsNRate'
+
+describe_region_MemberStatusComposite='describe region --name=/MemberStatusComposite'
+describe_region_MemberMgtLevel='describe region --name=/MemberMgtLevel'
+describe_region_OrgStores='describe region --name=/OrgStores'
+describe_region_ProductsNRate='describe region --name=/ProductsNRate'
+describe_region_MemberTicketData='describe region --name=/MemberTicketData'
+describe_region_PosOrderOffline='describe region --name=/PosOrderOffline'
+
+remove_region_MemberStatusComposite='remove --region=/MemberStatusComposite --all=true'
+remove_region_MemberMgtLevel='remove --region=/MemberMgtLevel --all=true'
+remove_region_OrgStores='remove --region=/OrgStores --all=true'
+remove_region_ProductsNRate='remove --region=/ProductsNRate --all=true'
+remove_region_MemberTicketData='remove --region=/MemberTicketData --all=true'
+remove_region_PosOrderOffline='remove --region=/PosOrderOffline --all=true'
+

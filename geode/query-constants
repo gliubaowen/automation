@@ -1,0 +1,22 @@
+
+# -------------------------------------------------------------------------------
+# Filename:    query-constants
+# Version:     2.0
+# Date:        2018-11-20
+# Author:      LiuBaoWen
+# Email:       bwliush@cn.ibm.com
+# Description: gfsh操作使用变量
+# Notes:       
+# -------------------------------------------------------------------------------
+
+list_members='list members'
+list_deployed='list deployed'
+list_regions='list regions'
+list_indexes='list indexes'
+
+query_MemberStatusComposite_count="query --query='select count(*) from /MemberStatusComposite'"
+query_MemberMgtLevel_count="query --query='select count(*) from /MemberMgtLevel'"
+query_OrgStores_count="query --query='select count(*) from /OrgStores'"
+query_ProductsNRate_count="query --query='select count(*) from /ProductsNRate'"
+query_MemberTicketData_count="query --query='select count(*) from /MemberTicketData'"
+query_PosOrderOffline_count="query --query='select count(*) from /PosOrderOffline'"

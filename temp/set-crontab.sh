@@ -10,6 +10,7 @@
 # Notes:       已经废弃，执行之前需要检查 /etc/crontab 文件内容
 # -------------------------------------------------------------------------------
 
+echo '* 05 * * * root /usr/sbin/ntpdate -u 10.100.200.76' >> /etc/crontab
 echo "40 0  * * * root /bin/bash /home/netty/stop-app.sh > /dev/null 2&>1" >> /etc/crontab
 echo "10 1  * * * root /bin/bash /home/netty/start-app.sh > /dev/null 2&>1" >> /etc/crontab
 

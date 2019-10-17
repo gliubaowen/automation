@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # -------------------------------------------------------------------------------
-# Filename:    echo-auto-start.sh
+# Filename:    set-auto-start.sh
 # Version:     2.0
 # Date:        2018-11-20
 # Author:      LiuBaoWen

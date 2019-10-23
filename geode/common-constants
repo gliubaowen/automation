@@ -1,13 +1,13 @@
 
-# -------------------------------------------------------------------------------
+###############################################
 # Filename:    common-constants 
 # Version:     2.0
-# Date:        2018-11-20
+# Date:        2019-10-23
 # Author:      LiuBaoWen
 # Email:       bwliush@cn.ibm.com
 # Description: 
 # Notes:       
-# -------------------------------------------------------------------------------
+###############################################
 
 #geode-gfsh命令地址
 gfsh='/usr/local/apache-geode-1.2.0/bin/gfsh'
@@ -16,7 +16,7 @@ gfsh='/usr/local/apache-geode-1.2.0/bin/gfsh'
 connect='connect'
 
 #配置文件
-appNameConfig='/opt/app/appName.properties'
+geodeConfig='/opt/app/geode.properties'
 
 #日志目录
 logdir='/opt/logs/CFM'

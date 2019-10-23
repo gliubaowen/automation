@@ -1,14 +1,14 @@
 #!/bin/bash
 
-# -------------------------------------------------------------------------------
+###############################################
 # Filename:    export-gemfire-data.sh
 # Version:     2.0
-# Date:        2018-11-20
+# Date:        2019-10-23
 # Author:      LiuBaoWen
 # Email:       bwliush@cn.ibm.com
 # Description: 导出 gemfire region 数据
 # Notes:       
-# -------------------------------------------------------------------------------
+###############################################
 
 workspaces=$(dirname "$0")
 
@@ -25,7 +25,7 @@ BACKUP_DIR=/opt/app/gemfirebak/data/backup/${DATE}
 echo "[info] 导出的当前目录为:${BACKUP_DIR}"
 
 #配置文件
-echo "[info] 配置文件为:${appNameConfig}"
+echo "[info] 配置文件为:${geodeConfig}"
 
 export-gemfire-data(){
 	

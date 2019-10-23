@@ -1,14 +1,14 @@
 #!/bin/bash
 
-# -------------------------------------------------------------------------------
-# Filename:    check-gemfire-deployed.sh 
+###############################################
+# Filename:    display-gemfire-deployed.sh 
 # Version:     2.0
-# Date:        2018-11-20
+# Date:        2019-10-23
 # Author:      LiuBaoWen
 # Email:       bwliush@cn.ibm.com
 # Description: 检查gemfire部署的jar包信息
 # Notes:       
-# -------------------------------------------------------------------------------
+###############################################
 
 workspaces=$(dirname "$0")
 

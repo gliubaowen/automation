@@ -1,14 +1,14 @@
 #!/bin/bash
 
-# -------------------------------------------------------------------------------
+###############################################
 # Filename:    monitor-gemfire-locator-local.sh
 # Version:     2.0
-# Date:        2018-11-20
+# Date:        2019-10-23
 # Author:      LiuBaoWen
 # Email:       bwliush@cn.ibm.com
 # Description: Plugin to monitor the gemfire locator local
 # Notes:       
-# -------------------------------------------------------------------------------
+###############################################
 
 workspaces=$(dirname "$0")
 

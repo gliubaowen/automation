@@ -1,14 +1,14 @@
 #!/bin/bash
 
-# -------------------------------------------------------------------------------
+###############################################
 # Filename:    monitor-gemfire-cluster.sh
 # Version:     2.0
-# Date:        2018-11-20
+# Date:        2019-10-23
 # Author:      LiuBaoWen
 # Email:       bwliush@cn.ibm.com
 # Description: Plugin to monitor the gemfire cluster
 # Notes:       
-# -------------------------------------------------------------------------------
+###############################################
 
 workspaces=$(dirname "$0")
 
@@ -26,7 +26,7 @@ select_host(){
 	elif [ $local_host == $host_slave ]; then
 		exec_host=$host_master
 	else
-		echo "[info] 配置文件：${appNameConfig} 错误"
+		echo "[info] 配置文件：${geodeConfig} 错误"
 	exit 1
 	fi
 	echo "[info] select remote host : $exec_host"

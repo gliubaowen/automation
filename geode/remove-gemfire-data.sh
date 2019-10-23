@@ -1,14 +1,14 @@
 #!/bin/bash
 
-# -------------------------------------------------------------------------------
+###############################################
 # Filename:    remove-gemfire-data.sh
 # Version:     2.0
-# Date:        2018-11-20
+# Date:        2019-10-23
 # Author:      LiuBaoWen
 # Email:       bwliush@cn.ibm.com
 # Description: 删除 gemfire region (MemberStatusComposite & MemberMgtLevel & OrgStores) 的全部数据
 # Notes:       谨慎执行
-# -------------------------------------------------------------------------------
+###############################################
 
 workspaces=$(dirname "$0")
 

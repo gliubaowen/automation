@@ -4,7 +4,7 @@ host_dir="/root/"                                      # 当前用户根目录
 file_name="monitor.log"                         # 日志文件
 cfm_locator_name="cfm-locator-slave"
 cfm_server_name="cfm-server-slave"
-appNameConfig="/opt/app/appName.properties"
+geodeConfig="/opt/app/geode.properties"
 pid=0
 host_master=V-CRMO01
 host_slave=V-CRMO02
@@ -12,7 +12,7 @@ host_slave=V-CRMO02
 
 cfm_prop(){
   arg1=$1
-  echo `sed -n "/$arg1=/"p ${appNameConfig} | sed "s/${arg1}=//"`
+  echo `sed -n "/$arg1=/"p ${geodeConfig} | sed "s/${arg1}=//"`
 }
 
 cfm_locator_name="`cfm_prop gemfire-locator-name`"

@@ -1,13 +1,13 @@
 
-# -------------------------------------------------------------------------------
+###############################################
 # Filename:    gfsh-constants
 # Version:     2.0
-# Date:        2018-11-20
+# Date:        2019-10-23
 # Author:      LiuBaoWen
 # Email:       bwliush@cn.ibm.com
 # Description: 所有查询使用变量
 # Notes:       
-# -------------------------------------------------------------------------------
+###############################################
 
 #start locator&server
 start_locator="start locator --name=$cfm_locator_name --port=10334 --dir=/opt/app/gemfire --mcast-port=0 --locators='${host_master}[10334],${host_slave}[10334]'"

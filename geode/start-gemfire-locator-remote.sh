@@ -1,14 +1,14 @@
 #!/bin/bash
 
-# -------------------------------------------------------------------------------
+###############################################
 # Filename:    start-gemfire-locator-remote.sh
 # Version:     2.0
-# Date:        2018-11-20
+# Date:        2019-10-23
 # Author:      LiuBaoWen
 # Email:       bwliush@cn.ibm.com
 # Description: 启动 geode 远程 locator 服务
 # Notes:       
-# -------------------------------------------------------------------------------
+###############################################
 
 workspaces=$(dirname "$0")
 
@@ -24,7 +24,7 @@ start-gemfire-locator-remote(){
 	elif [ $local_host == $host_slave ]; then
 		exec_host=$host_master	
 	else
-		echo "[error] 配置文件：${appNameConfig} 错误"
+		echo "[error] 配置文件：${geodeConfig} 错误"
 		exit 1
 	fi
 	${workspaces}/ssh-cmd.sh $exec_host ${workspaces}/start-gemfire-locator-local.sh	

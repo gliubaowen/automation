@@ -1,14 +1,14 @@
 #!/bin/bash
 
-# -------------------------------------------------------------------------------
+###############################################
 # Filename:    stop-gemfire-cluster.sh
 # Version:     2.0
-# Date:        2018-11-20
+# Date:        2019-10-23
 # Author:      LiuBaoWen
 # Email:       bwliush@cn.ibm.com
 # Description: 启动 geode 集群 服务
 # Notes:       
-# -------------------------------------------------------------------------------
+###############################################
 
 workspaces=$(dirname "$0")
 
@@ -53,7 +53,7 @@ stop-gemfire-cluster(){
 		stop-gemfire-master
 		stop-gemfire-slave
 	else 
-		echo "[error] 配置文件：${appNameConfig} 错误"
+		echo "[error] 配置文件：${geodeConfig} 错误"
 		exit 1
 	fi
 	echo "[info] 停止gemfire-cluster结果:>>>>>>>>> $?"

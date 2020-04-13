@@ -1,1 +1,16 @@
-# Ansible 管理 hosts 文件
+[dev]
+servera
+
+[test]
+serverb
+
+[prod]
+serverc
+serverd
+
+[balancers]
+servere
+
+[webservers:children]
+prod
+

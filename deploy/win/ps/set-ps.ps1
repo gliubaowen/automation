@@ -17,7 +17,7 @@ Write-Host $(Get-Date) 按任意键开始设置脚本运行级别
 
 cmd /c "pause>nul"
 
-Write-Host $(Get-Date) 设置脚本运行级别
+Write-Host $(Get-Date) 设置脚本运行级别开始
 set-executionpolicy remotesigned
 
-Write-Host $(Get-Date) 设置成功
+Write-Host $(Get-Date) 设置脚本运行级别完成

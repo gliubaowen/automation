@@ -13,3 +13,5 @@
 	(8).explorer
 2.double-route.bat & set-env.bat 需要管理员权限
 3.set-env.bat 设置path环境变量时 会把%path%解析成字符 需要完善
+
+由于 power shell 已经很流行  所以以后只更新ps部分 bat不再更新  2020-04-24

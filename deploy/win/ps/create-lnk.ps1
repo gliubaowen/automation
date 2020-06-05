@@ -1,10 +1,10 @@
 <#
 # Filename:    create-lnk.ps1 
 # Version:     0.0.1
-# Date:        2019-11-25
+# Date:        2020-06-04
 # Author:      LiuBaoWen
 # Email:       bwliush@cn.ibm.com
-# Description: 创建桌面快捷方式
+# Description: 创建快捷方式
 # Notes:    
 #>
 
@@ -23,31 +23,33 @@ $shortcut.Description=Desc
 
 Function CreateLnk($Program)
 {	
-    $start=$Program.LastIndexOf("\")+1
-    $end=$Program.LastIndexOf(".")
-    
-    $LnkName=$Program.Substring( $start,$end-$start )
-	$WorkingDirectory=$Program.Substring( 0,$start-1 )
+    $start = $Program.LastIndexOf("\")+1
+    $end = $Program.LastIndexOf(".")
+    #第三步，定义快捷方式对象，并设置相关属性。
+    $LnkName = $Program.Substring( $start,$end-$start )
+	$WorkingDirectory = $Program.Substring( 0,$start-1 )
 	
     $shortcut = $shell.CreateShortcut("$desktop\$LnkName.lnk")
 	$shortcut.TargetPath = $Program
 	$shortcut.WorkingDirectory = $WorkingDirectory
+	#最后，保存设置。
 	$shortcut.Save()
     return
 }
 
-Function StartMenu($Program)
+Function CreateStartMenu($Program)
 {
 
     $start=$Program.LastIndexOf("\")+1
     $end=$Program.LastIndexOf(".")
-    
+    #第三步，定义快捷方式对象，并设置相关属性。
     $LnkName=$Program.Substring( $start,$end-$start )
 	$WorkingDirectory=$Program.Substring( 0,$start-1 )
 	
-    $shortcut = $shell.CreateShortcut("$programs\$LnkName.lnk")
+    $shortcut = $shell.CreateShortcut("$StartMenuPrograms\$LnkName.lnk")
 	$shortcut.TargetPath = $Program
 	$shortcut.WorkingDirectory = $WorkingDirectory
+	#最后，保存设置。
 	$shortcut.Save()
     return
 }
@@ -75,8 +77,8 @@ $plsqldev_Program="D:\Workspace\PLSQL Developer 12\plsqldev.exe"
 $AS_SSD_Benchmark_Program="D:\Workspace\tools\AS_SSD_Benchmark\AS SSD Benchmark.exe"
 $DiskMark64_Program="D:\Workspace\tools\CrystalDiskMark6_0_1\DiskMark64.exe"
 $sqldeveloper_Program="D:\Workspace\sqldeveloper\sqldeveloper.exe"
-$DiskInfo64_Program="D:\Workspace\tools\crystaldiskinfo\DiskInfo64.exe"
-$aida64_Program="D:\Workspace\tools\aida64extreme_v4577\aida64.exe"
+$DiskInfo64_Program="D:\Workspace\tools\CrystalDiskInfo_8.2.0\DiskInfo64.exe"
+#$aida64_Program="D:\Workspace\tools\aida64extreme_v4577\aida64.exe"
 $XshellPortable_Program="D:\Workspace\tools\XshellXftpPortable\XshellPortable.exe"
 $XftpPortable_Program="D:\Workspace\tools\XshellXftpPortable\XftpPortable.exe"
 #$PanDownload_Program="D:\Workspace\tools\PanDownload\PanDownload.exe"
@@ -88,10 +90,8 @@ $MobaXterm_Program="D:\Workspace\tools\MobaXterm_Portable_v11.1\MobaXterm.exe"
 $shell = New-Object -ComObject WScript.Shell
 #第二步，因为我们是要在桌面创建快捷方式，那还必须得找到桌面的位置，即桌面的物理路径。
 $desktop = [System.Environment]::GetFolderPath('Desktop')
-$programs = [System.Environment]::GetFolderPath('Programs')
+$StartMenuPrograms = [System.Environment]::GetFolderPath('Programs')
 
-#第三步，定义快捷方式对象，并设置相关属性。
-#最后，保存设置。
 
 CreateLnk $eclipse_Program
 CreateLnk $DiskGenius_Program
@@ -100,15 +100,28 @@ CreateLnk $AS_SSD_Benchmark_Program
 CreateLnk $DiskMark64_Program
 CreateLnk $sqldeveloper_Program
 CreateLnk $DiskInfo64_Program
-CreateLnk $aida64_Program
+#CreateLnk $aida64_Program
 CreateLnk $XshellPortable_Program
 CreateLnk $XftpPortable_Program
-#CreateLnk $PanDownload_Program
 CreateLnk $VeraCrypt_x64_Program
 CreateLnk $FeiQ_Program
 CreateLnk $MobaXterm_Program
 
+
 #复制快捷方式到 C:\ProgramData\Microsoft\Windows\Start Menu\Programs 可以添加到开始菜单
+CreateStartMenu $eclipse_Program
+CreateStartMenu $DiskGenius_Program
+CreateStartMenu $plsqldev_Program
+CreateStartMenu $AS_SSD_Benchmark_Program
+CreateStartMenu $DiskMark64_Program
+CreateStartMenu $sqldeveloper_Program
+CreateStartMenu $DiskInfo64_Program
+#CreateStartMenu $aida64_Program
+CreateStartMenu $XshellPortable_Program
+CreateStartMenu $XftpPortable_Program
+CreateStartMenu $VeraCrypt_x64_Program
+CreateStartMenu $FeiQ_Program
+CreateStartMenu $MobaXterm_Program 
 
 Write-Host $(Get-Date) 创建桌面快捷方式完成.
 

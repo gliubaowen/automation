@@ -9,6 +9,7 @@
 #>
 
 # 声明采用UTF-8编码
+chcp 65001
 
 Write-Host $(Get-Date) 当前脚本运行级别
 Get-ExecutionPolicy

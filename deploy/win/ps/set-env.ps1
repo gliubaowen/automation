@@ -1,7 +1,7 @@
 <#
 # Filename:    set-env.ps1 
 # Version:     0.0.1
-# Date:        2019-11-25
+# Date:        2020-06-04
 # Author:      LiuBaoWen
 # Email:       bwliush@cn.ibm.com
 # Description: 设置系统全局环境变量

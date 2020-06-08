@@ -14,32 +14,46 @@ chcp 65001
 
 Write-Host $(Get-Date) 设置系统环境变量开始
 
-$PS_HOME="D:\06.Project\00.myproject\automation\deploy\win\ps"
-$BAT_HOME="D:\06.Project\00.myproject\automation\deploy\win\bat"
-$SH_HOME="D:\06.Project\00.myproject\automation\deploy\linux"
+$PS_HOME = "D:\06.Project\00.myproject\automation\deploy\win\ps"
+$BAT_HOME = "D:\06.Project\00.myproject\automation\deploy\win\bat"
+$SH_HOME = "D:\06.Project\00.myproject\automation\deploy\linux"
 
-$JAVA_HOME="D:\Workspace\jdk\jdk1.8.0_181"
-$IBM_JAVA_PATH="C:\ProgramData\Oracle\Java\javapath"
-$classpath=".;"
-$GIT_HOME="D:\Workspace\PortableGit"
-$MAVEM_HOME="D:\Workspace\apache-maven-3.5.4"
-$MAVEN_OPTS="-Duser.language=zh-CN -Dfile.encoding=UTF-8"
-$GRADLE_HOME="D:\Workspace\gradle-4.8.1-all\gradle-4.8.1"
-$GRADLE_USER_HOME="D:\Workspace\.gradle"
-$GRADLE_OPTS="-Dfile.encoding=utf-8"
-$TOMCAT_HOME="D:\Workspace\apache-tomcat-7.0.92"
-$CATALINA_HOME="D:\Workspace\apache-tomcat-7.0.92"
-$H2_HOME="D:\Workspace\h2"
-$NLS_LANG="SIMPLIFIED CHINESE_CHINA.AL32UTF8"
-$JMETER_HOME="D:\Workspace\apache-jmeter-5.2"
-$MINGW_HOME="D:\Workspace\mingw64\x86_64-8.1.0-release-posix-seh-rt_v6-rev0"
+$JAVA_HOME = "D:\Workspace\jdk\jdk1.8.0_181"
+$IBM_JAVA_PATH = "C:\ProgramData\Oracle\Java\javapath"
+$classpath = ".;"
+$GIT_HOME = "D:\Workspace\PortableGit"
+$MAVEM_HOME = "D:\Workspace\apache-maven-3.5.4"
+$MAVEN_OPTS = "-Duser.language=zh-CN -Dfile.encoding=UTF-8"
+$GRADLE_HOME = "D:\Workspace\gradle-4.8.1-all\gradle-4.8.1"
+$GRADLE_USER_HOME = "D:\Workspace\.gradle"
+$GRADLE_OPTS = "-Dfile.encoding=utf-8"
+$TOMCAT_HOME = "D:\Workspace\apache-tomcat-7.0.92"
+$CATALINA_HOME = "D:\Workspace\apache-tomcat-7.0.92"
+$H2_HOME = "D:\Workspace\h2"
+$NLS_LANG = "SIMPLIFIED CHINESE_CHINA.AL32UTF8"
+$JMETER_HOME = "D:\Workspace\apache-jmeter-5.2"
+$MINGW_HOME = "D:\Workspace\mingw64\x86_64-8.1.0-release-posix-seh-rt_v6-rev0"
 
 # %USERPROFILE%\AppData\Local\Microsoft\WindowsApps
 # 系统默认path变量值
-$env_path="%SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;%SYSTEMROOT%\System32\WindowsPowerShell\v1.0\;%SYSTEMROOT%\System32\OpenSSH\"
+$env_path = "%SystemRoot%\system32;" `
++ "%SystemRoot%;" `
++ "%SystemRoot%\System32\Wbem;" `
++ "%SYSTEMROOT%\System32\WindowsPowerShell\v1.0\;" `
++ "%SYSTEMROOT%\System32\OpenSSH\;" ;
 
 # 扩展path变量值
-$env_ext_path=$env_path+";%JAVA_HOME%\bin;%GIT_HOME%\bin;%MAVEM_HOME%\bin;%GRADLE_HOME%\bin;%TOMCAT_HOME%\bin;%H2_HOME%\bin;%PS_HOME%;%SH_HOME%;%JMETER_HOME%\bin;%MINGW_HOME%\bin"
+$env_path_ext = $env_path `
++ "%JAVA_HOME%\bin;" `
++ "%GIT_HOME%\bin;" `
++ "%MAVEM_HOME%\bin;" `
++ "%GRADLE_HOME%\bin;" `
++ "%TOMCAT_HOME%\bin;" `
++ "%H2_HOME%\bin;" `
++ "%PS_HOME%;" `
++ "%SH_HOME%;" `
++ "%JMETER_HOME%\bin;" `
++ "%MINGW_HOME%\bin;" ;
 
 [environment]::SetEnvironmentvariable("BAT_HOME", $BAT_HOME, "machine")
 [environment]::SetEnvironmentvariable("PS_HOME", $PS_HOME, "machine")
@@ -60,7 +74,7 @@ $env_ext_path=$env_path+";%JAVA_HOME%\bin;%GIT_HOME%\bin;%MAVEM_HOME%\bin;%GRADL
 [environment]::SetEnvironmentvariable("JMETER_HOME", $JMETER_HOME, "machine")
 [environment]::SetEnvironmentvariable("MINGW_HOME", $MINGW_HOME, "machine")
 
-[environment]::SetEnvironmentvariable("path", $env_ext_path, "machine")
+[environment]::SetEnvironmentvariable("path", $env_path_ext, "machine")
 
 Write-Host $(Get-Date) 设置系统环境变量成功
 

@@ -11,10 +11,31 @@
 # 声明采用UTF-8编码
 chcp 65001
 
-Write-Host $(Get-Date) "配置WSL开始"
+Write-Host $(Get-Date)  "配置开启WSL开始"
 
-# 开启windows 可选功能 wsl
-Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux -Confirm:$false
+Write-Host $(Get-Date)  "按任意键开始配置WSL开始"
+cmd /c "pause>nul"
+
+Write-Host $(Get-Date)  'Enable the "Windows Subsystem for Linux" optional feature.'
+dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+
+Write-Host $(Get-Date)  'Before installing WSL 2, you must enable the "Virtual Machine Platform" optional feature.'
+dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+
+Write-Host $(Get-Date)  'Restart your machine to complete the WSL install'
+Write-Host $(Get-Date)  "按任意键重启计算机"
+cmd /c "pause>nul"
+Restart-Computer
+
+# Set WSL 2 as your default version
+wsl --set-default-version 2
+
+wsl --set-version Ubuntu-20.04 2
+
+Write-Host $(Get-Date) "配置VirtualMachinePlatform开始"
+
+Write-Host $(Get-Date) "配置VirtualMachinePlatform完成"
+
 
 # 1.设置默认运行的linux系统
 # wslconfig /setdefault <DistributionName>

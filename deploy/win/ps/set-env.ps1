@@ -33,6 +33,7 @@ $H2_HOME = "D:\Workspace\h2"
 $NLS_LANG = "SIMPLIFIED CHINESE_CHINA.AL32UTF8"
 $JMETER_HOME = "D:\Workspace\apache-jmeter-5.2"
 $MINGW_HOME = "D:\Workspace\mingw64\x86_64-8.1.0-release-posix-seh-rt_v6-rev0"
+$ADB_HOME = "D:\Workspace\tools\platform-tools"
 
 # %USERPROFILE%\AppData\Local\Microsoft\WindowsApps
 # 系统默认path变量值
@@ -53,7 +54,8 @@ $env_path_ext = $env_path `
 + "%PS_HOME%;" `
 + "%SH_HOME%;" `
 + "%JMETER_HOME%\bin;" `
-+ "%MINGW_HOME%\bin;" ;
++ "%MINGW_HOME%\bin;" `
++ "%ADB_HOME%;" ;
 
 [environment]::SetEnvironmentvariable("BAT_HOME", $BAT_HOME, "machine")
 [environment]::SetEnvironmentvariable("PS_HOME", $PS_HOME, "machine")
@@ -73,6 +75,7 @@ $env_path_ext = $env_path `
 [environment]::SetEnvironmentvariable("NLS_LANG", $NLS_LANG, "machine")
 [environment]::SetEnvironmentvariable("JMETER_HOME", $JMETER_HOME, "machine")
 [environment]::SetEnvironmentvariable("MINGW_HOME", $MINGW_HOME, "machine")
+[environment]::SetEnvironmentvariable("ADB_HOME", $ADB_HOME, "machine")
 
 [environment]::SetEnvironmentvariable("path", $env_path_ext, "machine")
 

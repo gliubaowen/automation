@@ -1,7 +1,7 @@
 <#
 # Filename:    create-lnk.ps1 
 # Version:     0.0.1
-# Date:        2020-06-04
+# Date:        2020-11-05
 # Author:      LiuBaoWen
 # Email:       bwliush@cn.ibm.com
 # Description: 创建快捷方式
@@ -65,26 +65,24 @@ $DiskInfo64_LnkName="DiskInfo64"
 $aida64_LnkName="aida64"
 $XshellPortable_LnkName="XshellPortable"
 $XftpPortable_LnkName="XftpPortable"
-#$PanDownload_LnkName="PanDownload"
 $VeraCrypt_x64_LnkName="VeraCrypt-x64"
 $FeiQ_LnkName="FeiQ"
 $MobaXterm_LnkName="MobaXterm"
 
 #设置程序或文件的完整路径（必选）
-$eclipse_Program="D:\Workspace\eclipse\eclipse-jee-2019-03-R-win32-x86_64\eclipse.exe"
-$DiskGenius_Program="D:\Workspace\tools\DG512766_x64\DiskGenius\DiskGenius.exe"
-$plsqldev_Program="D:\Workspace\PLSQL Developer 12\plsqldev.exe"
-$AS_SSD_Benchmark_Program="D:\Workspace\tools\AS_SSD_Benchmark\AS SSD Benchmark.exe"
-$DiskMark64_Program="D:\Workspace\tools\CrystalDiskMark6_0_1\DiskMark64.exe"
-$sqldeveloper_Program="D:\Workspace\sqldeveloper\sqldeveloper.exe"
-$DiskInfo64_Program="D:\Workspace\tools\CrystalDiskInfo_8.2.0\DiskInfo64.exe"
-#$aida64_Program="D:\Workspace\tools\aida64extreme_v4577\aida64.exe"
-$XshellPortable_Program="D:\Workspace\tools\XshellXftpPortable\XshellPortable.exe"
-$XftpPortable_Program="D:\Workspace\tools\XshellXftpPortable\XftpPortable.exe"
-#$PanDownload_Program="D:\Workspace\tools\PanDownload\PanDownload.exe"
-$VeraCrypt_x64_Program="D:\Workspace\tools\VeraCrypt\VeraCrypt-x64.exe"
-$FeiQ_Program="D:\Workspace\tools\FeiQ.exe"
-$MobaXterm_Program="D:\Workspace\tools\MobaXterm_Portable_v11.1\MobaXterm.exe"
+$eclipse_Program="D:\09.Workspace\eclipse\eclipse-jee-2020-03-R-incubation-win32-x86_64\eclipse.exe"
+$DiskGenius_Program="D:\09.Workspace\tools\DG5301066_x64\DiskGenius\DiskGenius.exe"
+$plsqldev_Program="D:\09.Workspace\PLSQL Developer 12\plsqldev.exe"
+$AS_SSD_Benchmark_Program="D:\09.Workspace\tools\AS_SSD_Benchmark\AS SSD Benchmark.exe"
+$DiskMark64_Program="D:\09.Workspace\tools\CrystalDiskMark6_0_1\DiskMark64.exe"
+$sqldeveloper_Program="D:\09.Workspace\sqldeveloper\sqldeveloper.exe"
+$DiskInfo64_Program="D:\09.Workspace\tools\CrystalDiskInfo_8.2.0\DiskInfo64.exe"
+$aida64_Program="D:\09.Workspace\tools\aida64extreme_v4577\aida64.exe"
+$XshellPortable_Program="D:\09.Workspace\tools\XshellXftpPortable\XshellPortable.exe"
+$XftpPortable_Program="D:\09.Workspace\tools\XshellXftpPortable\XftpPortable.exe"
+$VeraCrypt_x64_Program="D:\09.Workspace\tools\VeraCrypt\VeraCrypt-x64.exe"
+$FeiQ_Program="D:\09.Workspace\tools\FeiQ.exe"
+$MobaXterm_Program="D:\09.Workspace\tools\MobaXterm_Portable_v11.1\MobaXterm.exe"
 
 #首先，我们要使用到COM组件，创建桌面快捷方式，最简单的办法是调用WScript.Shell这个COM组件。
 $shell = New-Object -ComObject WScript.Shell
@@ -100,7 +98,7 @@ CreateLnk $AS_SSD_Benchmark_Program
 CreateLnk $DiskMark64_Program
 CreateLnk $sqldeveloper_Program
 CreateLnk $DiskInfo64_Program
-#CreateLnk $aida64_Program
+CreateLnk $aida64_Program
 CreateLnk $XshellPortable_Program
 CreateLnk $XftpPortable_Program
 CreateLnk $VeraCrypt_x64_Program
@@ -116,7 +114,7 @@ CreateStartMenu $AS_SSD_Benchmark_Program
 CreateStartMenu $DiskMark64_Program
 CreateStartMenu $sqldeveloper_Program
 CreateStartMenu $DiskInfo64_Program
-#CreateStartMenu $aida64_Program
+CreateStartMenu $aida64_Program
 CreateStartMenu $XshellPortable_Program
 CreateStartMenu $XftpPortable_Program
 CreateStartMenu $VeraCrypt_x64_Program

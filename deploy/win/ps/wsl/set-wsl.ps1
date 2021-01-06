@@ -20,7 +20,7 @@ Write-Host $(Get-Date)  'Enable the "Windows Subsystem for Linux" optional featu
 dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
 
 Write-Host $(Get-Date)  'Before installing WSL 2, you must enable the "Virtual Machine Platform" optional feature.'
-dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+#dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
 
 Write-Host $(Get-Date)  'Restart your machine to complete the WSL install'
 Write-Host $(Get-Date)  "按任意键重启计算机"

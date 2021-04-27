@@ -18,7 +18,7 @@ $PS_HOME = "D:\06.Project\00.myproject\automation\deploy\win\ps"
 $BAT_HOME = "D:\06.Project\00.myproject\automation\deploy\win\bat"
 $SH_HOME = "D:\06.Project\00.myproject\automation\deploy\linux"
 
-$JAVA_HOME = "D:\09.Workspace\jdk\jdk1.8.0_181"
+$JAVA_HOME = "D:\09.Workspace\jdk\jdk-11.0.9"
 $IBM_JAVA_PATH = "C:\ProgramData\Oracle\Java\javapath"
 $classpath = ".;"
 $GIT_HOME = "D:\09.Workspace\PortableGit"
@@ -28,7 +28,7 @@ $GRADLE_HOME = "D:\09.Workspace\gradle-4.8.1-all\gradle-4.8.1"
 $GRADLE_USER_HOME = "D:\09.Workspace\.gradle"
 $GRADLE_OPTS = "-Dfile.encoding=utf-8"
 $TOMCAT_HOME = "D:\09.Workspace\apache-tomcat-7.0.92"
-$CATALINA_HOME = "D:\09.Workspace\apache-tomcat-7.0.92"
+#$CATALINA_HOME = "D:\09.Workspace\apache-tomcat-7.0.92"
 $H2_HOME = "D:\09.Workspace\h2"
 $NLS_LANG = "SIMPLIFIED CHINESE_CHINA.AL32UTF8"
 $JMETER_HOME = "D:\09.Workspace\apache-jmeter-5.2"
@@ -73,7 +73,7 @@ $env_path_ext = $env_path `
 [environment]::SetEnvironmentvariable("GRADLE_USER_HOME", $GRADLE_USER_HOME, "machine")
 [environment]::SetEnvironmentvariable("GRADLE_OPTS", $GRADLE_OPTS, "machine")
 [environment]::SetEnvironmentvariable("TOMCAT_HOME", $TOMCAT_HOME, "machine")
-[environment]::SetEnvironmentvariable("CATALINA_HOME", $CATALINA_HOME, "machine")
+#[environment]::SetEnvironmentvariable("CATALINA_HOME", $CATALINA_HOME, "machine")
 [environment]::SetEnvironmentvariable("H2_HOME", $H2_HOME, "machine")
 [environment]::SetEnvironmentvariable("NLS_LANG", $NLS_LANG, "machine")
 [environment]::SetEnvironmentvariable("JMETER_HOME", $JMETER_HOME, "machine")

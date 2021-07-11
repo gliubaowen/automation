@@ -70,7 +70,7 @@ $FeiQ_LnkName="FeiQ"
 $MobaXterm_LnkName="MobaXterm"
 
 #设置程序或文件的完整路径（必选）
-$eclipse_Program="D:\09.Workspace\eclipse\eclipse-jee-2020-03-R-incubation-win32-x86_64\eclipse.exe"
+$eclipse_Program="D:\09.Workspace\eclipse\eclipse-jee-2021-03-R-win32-x86_64\eclipse.exe"
 $DiskGenius_Program="D:\09.Workspace\tools\DG5301066_x64\DiskGenius\DiskGenius.exe"
 $plsqldev_Program="D:\09.Workspace\PLSQL Developer 12\plsqldev.exe"
 $AS_SSD_Benchmark_Program="D:\09.Workspace\tools\AS_SSD_Benchmark\AS SSD Benchmark.exe"

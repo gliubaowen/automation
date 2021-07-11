@@ -1,7 +1,7 @@
 <#
 # Filename:    set-env.ps1 
 # Version:     0.0.1
-# Date:        2020-11-05
+# Date:        2021-07-11
 # Author:      LiuBaoWen
 # Email:       bwliush@cn.ibm.com
 # Description: 设置系统全局环境变量
@@ -22,9 +22,9 @@ $JAVA_HOME = "D:\09.Workspace\jdk\jdk-11.0.9"
 $IBM_JAVA_PATH = "C:\ProgramData\Oracle\Java\javapath"
 $classpath = ".;"
 $GIT_HOME = "D:\09.Workspace\PortableGit"
-$MAVEM_HOME = "D:\09.Workspace\apache-maven-3.5.4"
+$MAVEM_HOME = "D:\09.Workspace\apache-maven-3.8.1"
 $MAVEN_OPTS = "-Duser.language=zh-CN -Dfile.encoding=UTF-8"
-$GRADLE_HOME = "D:\09.Workspace\gradle-4.8.1-all\gradle-4.8.1"
+$GRADLE_HOME = "D:\09.Workspace\gradle\gradle-7.1.1"
 $GRADLE_USER_HOME = "D:\09.Workspace\.gradle"
 $GRADLE_OPTS = "-Dfile.encoding=utf-8"
 $TOMCAT_HOME = "D:\09.Workspace\apache-tomcat-7.0.92"
@@ -81,6 +81,7 @@ $env_path_ext = $env_path `
 [environment]::SetEnvironmentvariable("JBOSS_HOME", $JBOSS_HOME, "machine")
 [environment]::SetEnvironmentvariable("ADB_HOME", $ADB_HOME, "machine")
 
+#设置PATH变量
 [environment]::SetEnvironmentvariable("path", $env_path_ext, "machine")
 
 Write-Host $(Get-Date) 设置系统环境变量成功

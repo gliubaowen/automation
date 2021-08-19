@@ -16,10 +16,10 @@ Write-Host $(Get-Date) 设置系统环境变量开始
 
 $PS_HOME = "D:\06.Project\00.myproject\automation\deploy\win\ps"
 $BAT_HOME = "D:\06.Project\00.myproject\automation\deploy\win\bat"
-$SH_HOME = "D:\06.Project\00.myproject\automation\deploy\linux"
+#$SH_HOME = "D:\06.Project\00.myproject\automation\deploy\linux"
 
 $JAVA_HOME = "D:\09.Workspace\jdk\jdk-11.0.9"
-$IBM_JAVA_PATH = "C:\ProgramData\Oracle\Java\javapath"
+#$IBM_JAVA_PATH = "C:\ProgramData\Oracle\Java\javapath"
 $classpath = ".;"
 $GIT_HOME = "D:\09.Workspace\PortableGit"
 $MAVEM_HOME = "D:\09.Workspace\apache-maven-3.8.1"

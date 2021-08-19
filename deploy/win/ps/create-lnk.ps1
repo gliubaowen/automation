@@ -39,7 +39,6 @@ Function CreateLnk($Program)
 
 Function CreateStartMenu($Program)
 {
-
     $start=$Program.LastIndexOf("\")+1
     $end=$Program.LastIndexOf(".")
     #第三步，定义快捷方式对象，并设置相关属性。
@@ -54,6 +53,7 @@ Function CreateStartMenu($Program)
     return
 }
 
+<#
 #设置快捷方式名称（必选）
 $eclipse_LnkName="eclipse jee"
 $DiskGenius_LnkName="DiskGenius"
@@ -68,9 +68,10 @@ $XftpPortable_LnkName="XftpPortable"
 $VeraCrypt_x64_LnkName="VeraCrypt-x64"
 $FeiQ_LnkName="FeiQ"
 $MobaXterm_LnkName="MobaXterm"
+#>
 
 #设置程序或文件的完整路径（必选）
-$eclipse_Program="D:\09.Workspace\eclipse\eclipse-jee-2021-03-R-win32-x86_64\eclipse.exe"
+$eclipse_Program="D:\09.Workspace\eclipse\eclipse-jee-2021-06-R-win32-x86_64\eclipse.exe"
 $DiskGenius_Program="D:\09.Workspace\tools\DG5301066_x64\DiskGenius\DiskGenius.exe"
 $plsqldev_Program="D:\09.Workspace\PLSQL Developer 12\plsqldev.exe"
 $AS_SSD_Benchmark_Program="D:\09.Workspace\tools\AS_SSD_Benchmark\AS SSD Benchmark.exe"
@@ -90,7 +91,6 @@ $shell = New-Object -ComObject WScript.Shell
 $desktop = [System.Environment]::GetFolderPath('Desktop')
 $StartMenuPrograms = [System.Environment]::GetFolderPath('Programs')
 
-
 CreateLnk $eclipse_Program
 CreateLnk $DiskGenius_Program
 CreateLnk $plsqldev_Program
@@ -104,7 +104,6 @@ CreateLnk $XftpPortable_Program
 CreateLnk $VeraCrypt_x64_Program
 CreateLnk $FeiQ_Program
 CreateLnk $MobaXterm_Program
-
 
 #复制快捷方式到 C:\ProgramData\Microsoft\Windows\Start Menu\Programs 可以添加到开始菜单
 CreateStartMenu $eclipse_Program
